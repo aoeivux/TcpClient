@@ -38,6 +38,8 @@ int main(int argc, const char **argv) {
 	// setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, (const char*)&on, sizeof(on));
 
     // client_addr
+/*
+    当客户端调用 `connect()` 之前没有显式调用 `bind()`，操作系统会自动为客户端分配一个临时的端口（通常是大于 1024 的随机端口），并绑定到客户端的 `IP` 地址。
     sockaddr_in client_addr;
     client_addr.sin_family = AF_INET;
     client_addr.sin_addr.S_un.S_addr = INADDR_ANY;
@@ -48,6 +50,7 @@ int main(int argc, const char **argv) {
         LOGE("socket bind error");
         return -1;
     }
+*/
 
     // server_addr
     sockaddr_in server_addr;
